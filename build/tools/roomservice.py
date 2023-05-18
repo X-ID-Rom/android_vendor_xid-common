@@ -82,7 +82,7 @@ if not depsonly:
         # passing in a string 
 
         for i in result.findall('project'):
-            print(ElementTree.tostring(i))
+            print(i.attrib['name'])
 
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
