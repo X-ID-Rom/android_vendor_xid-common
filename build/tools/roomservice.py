@@ -266,7 +266,7 @@ def get_default_or_fallback_revision(repo_name):
     if has_branch(result, default_revision):
         return default_revision
 
-    fallbacks = [ get_default_revision_no_minor() ]
+    fallbacks = [ get_default_revision_no_minor() , 'thirteen']
     if os.getenv('ROOMSERVICE_BRANCHES'):
         fallbacks += list(filter(bool, os.getenv('ROOMSERVICE_BRANCHES').split(' ')))
     else:
