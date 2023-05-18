@@ -74,6 +74,8 @@ function breakfast()
         # No arguments, so let's have the full menu
         lunch
     else
+        export ROOMSERVICE_BRANCHES=thirteen
+        
         if [[ "$target" =~ -(user|userdebug|eng)$ ]]; then
             # A buildtype was specified, assume a full device name
             lunch $target
