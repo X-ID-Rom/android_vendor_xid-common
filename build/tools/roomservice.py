@@ -138,7 +138,7 @@ def get_from_manifest(devicename):
             lm = ElementTree.Element("manifest")
 
         for localpath in lm.findall("project"):
-            if re.search("android_device_.*_%s$" % device, localpath.get("name")):
+            if re.search("android_device_.*_%s$" % devicename, localpath.get("name")):
                 return localpath.get("path")
 
     return None
