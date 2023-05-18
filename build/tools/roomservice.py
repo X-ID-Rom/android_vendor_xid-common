@@ -82,7 +82,7 @@ if not depsonly:
         # passing in a string 
 
         for i in result.findall('project'):
-            print(i.attrib['name'][10:])
+            print(i.attrib['name'].split("/")[2])
 
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
