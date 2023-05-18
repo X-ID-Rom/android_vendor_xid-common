@@ -229,6 +229,7 @@ def fetch_dependencies(repo_path):
                 fetch_list.append(dependency)
                 syncable_repos.append(dependency['target_path'])
                 if 'branch' not in dependency:
+                    print(dependency['repository'])
                     dependency['branch'] = get_default_or_fallback_revision(dependency['repository'])
             verify_repos.append(dependency['target_path'])
 
