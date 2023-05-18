@@ -76,7 +76,7 @@ if not depsonly:
     githubreq = urllib.request.Request("https://raw.githubusercontent.com/X-ID-Rom/mirror/master/default.xml")
     try:
         result = ElementTree.fromstring(urllib.request.urlopen(githubreq).read().decode())
-        print(result)
+        print(urllib.request.urlopen(githubreq).read().decode())
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
         sys.exit(1)
