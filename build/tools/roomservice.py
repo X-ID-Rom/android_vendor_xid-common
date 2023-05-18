@@ -75,23 +75,14 @@ def add_auth(githubreq):
 if not depsonly:
     githubreq = urllib.request.Request("https://raw.githubusercontent.com/X-ID-Rom/mirror/master/default.xml")
     try:
-        
         result = ElementTree.fromstring(urllib.request.urlopen(githubreq).read().decode())
-        # emptystr = ""
-
-        # passing in a string 
-
-        for i in result.findall('project'):
-            res = i.attrib['name'].split("/")
-            print(res[len(res) - 1])
-
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
         sys.exit(1)
     except ValueError:
         print("Failed to parse return data from GitHub")
         sys.exit(1)
-    for res in result.findall('project'):
+    for res in result.findall('.//project'):
         repositories.append(res.attrib['name'][10:])
 
 local_manifests = r'.repo/local_manifests'
@@ -147,7 +138,7 @@ def get_from_manifest(devicename):
             lm = ElementTree.Element("manifest")
 
         for localpath in lm.findall("project"):
-            if re.search("android_device_.*_%s$" % devicename, localpath.get("name")):
+            if re.search("android_device_.*_%s$" % device, localpath.get("name")):
                 return localpath.get("path")
 
     return None
