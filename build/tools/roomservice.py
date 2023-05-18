@@ -269,7 +269,10 @@ def get_default_or_fallback_revision(repo_name):
     fallbacks = [ get_default_revision_no_minor() ]
     if os.getenv('ROOMSERVICE_BRANCHES'):
         fallbacks += list(filter(bool, os.getenv('ROOMSERVICE_BRANCHES').split(' ')))
+    else:
+        fallbacks += list(filter(bool, 'thirteen'))
 
+    
     for fallback in fallbacks:
         if has_branch(result, fallback):
             print("Using fallback branch: %s" % fallback)
