@@ -75,8 +75,9 @@ def add_auth(githubreq):
 if not depsonly:
     githubreq = urllib.request.Request("https://raw.githubusercontent.com/X-ID-Rom/mirror/master/default.xml")
     try:
+        
         result = ElementTree.fromstring(urllib.request.urlopen(githubreq).read().decode())
-        print(' '.join([str(elem) for elem in  result.findall('project')]))
+        print(ElementTree.tostring(result.findall('project')))
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
         sys.exit(1)
