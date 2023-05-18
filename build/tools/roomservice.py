@@ -83,7 +83,8 @@ if not depsonly:
         print("Failed to parse return data from GitHub")
         sys.exit(1)
     for res in result.findall('.//project'):
-        repositories.append(res.attrib['name'][10:])
+        sep = res.attrib['name'].split("/")
+        repositories.append(sep[len(sep) - 1])
 
 local_manifests = r'.repo/local_manifests'
 if not os.path.exists(local_manifests): os.makedirs(local_manifests)
