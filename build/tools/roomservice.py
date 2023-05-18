@@ -83,7 +83,7 @@ if not depsonly:
     except ValueError:
         print("Failed to parse return data from GitHub")
         sys.exit(1)
-    for res in result.findall('.//project'):
+    for res in result.findall('project'):
         repositories.append(res.attrib['name'][10:])
 
 local_manifests = r'.repo/local_manifests'
