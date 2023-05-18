@@ -77,7 +77,13 @@ if not depsonly:
     try:
         
         result = ElementTree.fromstring(urllib.request.urlopen(githubreq).read().decode())
-        print(ElementTree.tostring(result.findall('project')))
+        # emptystr = ""
+
+        # passing in a string 
+
+        for i in result.findall('project'):
+            print(ElementTree.tostring(i))
+
     except urllib.error.URLError:
         print("Failed to fetch data from GitHub")
         sys.exit(1)
