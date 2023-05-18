@@ -214,7 +214,8 @@ def add_to_manifest(repositories):
 
 def fetch_dependencies(repo_path):
     print('Looking for dependencies in %s' % repo_path)
-    dependencies_path = repo_path + '/lineage.dependencies'
+    # dependencies_path = repo_path + '/lineage.dependencies'
+    dependencies_path = repo_path + '/xid.dependencies'
     syncable_repos = []
     verify_repos = []
 
