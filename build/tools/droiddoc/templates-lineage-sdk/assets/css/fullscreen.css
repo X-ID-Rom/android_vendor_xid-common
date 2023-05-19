@@ -204,5 +204,6 @@ body {
 @media screen and (max-width:772px) {
 .col-5, .col-6, .col-7 {
     clear: both;
-    width: 97.0238096%}
+    width: 97.0238096%;
+  }
 }
