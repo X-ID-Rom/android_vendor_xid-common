@@ -9,6 +9,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.lineage.version=$(XID_VERSION) \
     ro.lineage.releasetype=$(LINEAGE_BUILDTYPE) \
     ro.lineage.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR) \
+    ro.xid.build.version=$(XID_VERSION) \
     ro.modversion=$(XID_VERSION) \
     ro.lineagelegal.url=https://lineageos.org/legal
 

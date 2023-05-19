@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # Lineage OTA update package
 
-LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/xid-rom-$(XID_VERSION).zip
+LINEAGE_TARGET_PACKAGE := $(PRODUCT_OUT)/xid-rom-$(XID_VERSION)-los$(LINEAGE_DISPLAY_VERSION).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 

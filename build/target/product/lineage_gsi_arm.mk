@@ -20,4 +20,4 @@ PRODUCT_USE_DYNAMIC_PARTITION_SIZE := true
 
 TARGET_NO_KERNEL_OVERRIDE := true
 
-PRODUCT_NAME := lineage_gsi_arm
+PRODUCT_NAME := xid_gsi_arm
